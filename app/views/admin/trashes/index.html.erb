@@ -1,0 +1,23 @@
+<%= provide :title, t("trash.admin.title.header") %>
+<div id="trashes">
+  <h2><%= t "trash.admin.title.header" %></h2>
+  <hr>
+  <div class="form-filter">
+    <%= render "admin/articles/form_filter", url: admin_trashes_path %>
+  </div>
+  <hr>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <th width="30%"><%= t "trash.admin.list.header.title" %></th>
+      <th width="10%"><%= t "trash.admin.list.header.author" %></th>
+      <th width="10%"><%= t "trash.admin.list.header.category" %></th>
+      <th width="15%"><%= t "trash.admin.list.header.posted_date" %></th>
+      <th width="10%"><%= t "trash.admin.list.header.status" %></th>
+      <th width="25%"></th>
+    </thead>
+    <tbody>
+      <%= render partial: "article", collection: @articles %>
+    </tbody>
+  </table>
+  <%= will_paginate @articles %>
+</div>

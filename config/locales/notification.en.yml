@@ -1,0 +1,16 @@
+en:
+  notification:
+    title: "Notifications"
+    actions:
+      delete: "Delete"
+      add: "Add new"
+      save_push: "Save and Push notification"
+    list:
+      header:
+        content: "Content"
+        url: "Url"
+        by: "Created by"
+        created_at: "Created at"
+        result: "Push Result"
+    modal:
+      add_notification: "Add Notification"

@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-12">
+    <%= form_for [:admin, @notification], remote: true do |f| %>
+      <%= render "shared/errors_messages", object: @notification %>
+      <p><%= f.label :content %></p>
+      <p><%= f.text_field :content, class: "form-control" %></p>
+      <p><%= f.label :link %></p>
+      <p><%= f.text_field :link, class: "form-control" %></p>
+      <hr>
+      <%= f.submit t("notification.actions.save_push"), class: "btn btn-primary pull-right" %>
+      <button type="button" class="btn btn-default pull-right btn-close" data-dismiss="modal">
+        <%= t "admin.buttons.close" %>
+      </button>
+    <% end %>
+  </div>
+</div>

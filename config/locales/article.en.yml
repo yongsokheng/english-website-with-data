@@ -1,0 +1,39 @@
+en:
+  article:
+    admin:
+      title:
+        header: "All articles"
+        post_new: "Post New Article"
+        post_edit: "Edit Article"
+      panel_title: "Publish"
+      panel_status: "Article Status"
+      status: "Status:"
+      schedule_at: "Schedule at:"
+      published_at: "Published at:"
+      all_authors: "All Authors"
+      all_categories: "All Categories"
+      all_status: "All Status"
+      min_post_date: "From Date"
+      max_post_date: "To Date"
+      actions:
+        preview: "Preview"
+        save_draft: "Save Draft"
+        schedule: "Schedule"
+        publish: "Publish now"
+        update: "Update"
+        unpublish: "Unpublish"
+        edit: "Edit"
+        move_to_trash: "Trash"
+        preview: "Preview"
+      buttons:
+        add: "Post new article"
+        filter: "Filter"
+      list:
+        header:
+          title: "Title"
+          views: "Views"
+          author: "Author"
+          category: "Category"
+          posted_date: "Posted Date"
+          status: "Status"
+          actions: "Actions"

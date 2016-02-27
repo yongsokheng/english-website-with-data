@@ -1,0 +1,7 @@
+<% if @notification.errors.any?  %>
+  $(".error_messages").html("<%= j render 'shared/errors_messages', object: @notification %>");
+<% else %>
+  $("#notification-modal").modal("hide");
+  $(".notification-list").html("<%= j render @notifications %>")
+  $(".flash").html("<%= j render 'shared/flash' %>");
+<% end %>

@@ -1,0 +1,30 @@
+<tr>
+  <td><%= article.title %></td>
+  <td><%= article.view %></td>
+  <td><%= link_to article.user.name, admin_profile_path(article.user) %></td>
+  <td><%= article.category.name %></td>
+  <td><%= l article.created_at, format: :default %></td>
+  <td><%= article.post_status %></td>
+  <td align="center">
+    <% if current_user? article.user %>
+      <%= link_to edit_admin_article_path(article), class: "btn-icon",
+        data: {no_turbolink: true}  do %>
+        <i class="fa fa-pencil-square-o"></i>
+        <%= t("article.admin.actions.edit") %>
+      <% end %>
+    <% end %>
+
+    <% if current_user.admin? || current_user?(article.user) %>
+      <%= link_to admin_article_path(article), method: :delete,
+        data:{confirm: t("custom.confirm_trash")}, class: "btn-icon" do %>
+        <i class="fa fa-trash-o"></i>
+        <%= t("article.admin.actions.move_to_trash") %>
+      <% end %>
+    <% end %>
+
+    <%= link_to article, target: "_blank" do %>
+      <i class="fa fa-eye"></i>
+      <%= t("article.admin.actions.preview") %>
+    <% end %>
+  </td>
+</tr>

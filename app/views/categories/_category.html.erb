@@ -1,0 +1,14 @@
+<%
+  big_article = Article.find_published_articles 1, 0, category.id
+  small_article = Article.find_published_articles 4, 1, category.id
+%>
+
+<h4>
+  <%= link_to category.name, category %>
+  <span><i><%= link_to t("buttons.more"), category, class: "pull-right more" %></i></span>
+</h4>
+<div class="line"></div>
+<div class="row">
+  <%= render partial: "articles/big_article", collection: big_article, as: :article %>
+  <%= render small_article %>
+</div>

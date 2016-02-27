@@ -1,0 +1,20 @@
+<meta property="og:title" content= "<%= @article.title if @article %>" />
+<meta property="og:description" content= "" />
+<%
+  image_share = ""
+  if @article
+    if @article.audio_url? && @article.image.thumb.file.exists?
+      image_share = "#{request.protocol}#{request.host}#{@article.image.thumb.url}"
+    else
+      image_share = "#{request.protocol}#{request.host}#{@article.image.url}"
+    end
+  end
+%>
+<meta property="og:image" content= "<%= image_share %>" />
+<meta property="og:url" content= "<%= request.original_url %>" />
+
+<!-- twitter card meta -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<%= @article.title if @article %>">
+<meta name="twitter:description" content="<%= @article.content if @article %>">
+<meta name="twitter:image:src" content="<%= image_share %>">

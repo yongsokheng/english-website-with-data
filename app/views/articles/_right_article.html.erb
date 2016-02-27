@@ -1,0 +1,20 @@
+<div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- av_banner_category_2 -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-1391132134348179"
+       data-ad-slot="2883283840"
+       data-ad-format="auto"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+<hr>
+<div class="similar-article">
+  <h3><b><%= t "labels.similar_articles" %></b></h3>
+  <%= render partial: "small_right_article", collection: @articles, as: :article %>
+  <h4><%= link_to t("buttons.more"), category_path(@category_id),
+    class: "btn btn-default btn-more" %></h4>
+</div>

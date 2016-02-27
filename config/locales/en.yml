@@ -1,0 +1,85 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  titles:
+    header: "MONOREAD"
+  menus:
+    home: "Home"
+    enterprise: "Enterprise"
+    general_knowledge: "General Knowledge"
+    health: "Health"
+    top30: "Top 30"
+  custom:
+    confirm_delete: "Are you sure to delete?"
+    confirm_trash: "Are you sure to move to Trash?"
+  labels:
+    listen_audio: "Listen here:"
+    comment: "Comment"
+    similar_articles: "Similar articles:"
+    copyright: "Copyright"
+    contact: "Contact"
+    brand: "MONOREAD"
+    popup_title: "Please like or share to support us. Thanks"
+    fb_home_label: ""
+    get_google_play: ""
+    googleplay: ""
+    get_now: ""
+  flashs:
+    messages:
+      created: "%{model_name} was created successfully!"
+      deleted: "%{model_name} was deleted successfully!"
+      not_deleted: "%{model_name} couldn't be deleted!"
+      updated: "%{model_name} was updated successfully!"
+      created: "%{model_name} was created successfully!"
+      move_to_trash: "Record has been moved to trash"
+      restore: "Record has been restored"
+      delete_permanently: "Record has been delete permanently"
+  validate:
+    datetime_error: "must great than current time"
+  time:
+    formats:
+      default: ! "%Y-%m-%d %l:%M %p"
+      short: ! "%y-%m-%d %H:%M"
+      long: ! "%d-%m-%Y %l:%M %p"
+      year: ! "%Y"
+  date:
+    formats:
+      default: ! "%d-%m-%Y"
+      short: ! "%d-%m-%y"
+  buttons:
+    more: "See all"
+  admin:
+    titles:
+      header: "MONOREAD Admin"
+    menus:
+      dashboard: "Dashboard"
+      category: "Category"
+      user: "User"
+      article: "Article"
+      notification: "Notification"
+      trash: "Trash"
+      profile: "Profile"
+      logout: "Log out"
+    labels:
+      form_inform_errors: "Form contains "
+    buttons:
+      close: "Close"

@@ -1,0 +1,16 @@
+<tr>
+  <td><%= category.name %></td>
+  <td align="right">
+    <% if current_user.admin? %>
+      <%= link_to edit_admin_category_path(category), remote: true, class: "btn-icon" do %>
+        <i class="fa fa-pencil-square-o"></i>
+        <%= t("category.admin.actions.edit") %>
+      <% end %>
+      <%= link_to admin_category_path(category), method: :delete,
+        data:{confirm: t("custom.confirm_delete")} do %>
+        <i class="fa fa-trash-o"></i>
+        <%= t("category.admin.actions.delete") %>
+      <% end %>
+    <% end %>
+  </td>
+</tr>

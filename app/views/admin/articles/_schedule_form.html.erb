@@ -1,0 +1,13 @@
+<%= f.submit t("article.admin.actions.preview"), class: "btn btn-primary" %>
+<%= f.submit t("article.admin.actions.publish"), class: "btn btn-success" %>
+<div class="schedule">
+  <div class="form-group">
+    <div class="input-group date" id="datetimepicker3">
+      <%=  f.text_field :schedule_at, class: "datetimepicker3 form-control" %>
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+      </span>
+    </div>
+  </div>
+  <%= f.submit t("article.admin.actions.schedule"), class: "btn btn-warning btn-schedule" %>
+</div>

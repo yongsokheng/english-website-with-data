@@ -1,0 +1,13 @@
+en:
+  dashboard:
+    admin:
+      header: "Dashboard"
+      user: "User"
+      category: "Category"
+      article: "Article"
+      device: "Devices"
+      notification: "Notifications"
+      trash: "Trash"
+      draft: "Draft:"
+      pending: "Pending:"
+      published: "Published:"

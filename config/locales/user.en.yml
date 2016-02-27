@@ -1,0 +1,29 @@
+en:
+  user:
+    admin:
+      profile: "Profile"
+      titles:
+        all: "All users"
+      buttons:
+        add: "Add new"
+        save: "Save"
+        cancel: "Cancel"
+      list:
+        header:
+          name: "Name"
+          email: "Email"
+          role: "Role"
+          action: "Action"
+      actions:
+        delete: "Delete"
+        edit: "Edit"
+        show_profile: "Show Profile"
+        edit_profile: "Edit Profile"
+        change_password: "Change Password"
+      modal:
+        user_add: "Add New User"
+        user_edit: "Edit User"
+        edit_profile: "Edit Profile"
+        change_password: "Change Password"
+      password:
+        message: "Password has successfully changed"

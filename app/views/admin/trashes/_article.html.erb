@@ -1,0 +1,20 @@
+<tr>
+  <td><%= article.title %></td>
+  <td><%= link_to article.user.name, admin_profile_path(article.user) %></td>
+  <td><%= article.category.name %></td>
+  <td><%= l article.created_at, format: :default %></td>
+  <td><%= article.post_status %></td>
+  <td align="center">
+    <%= link_to edit_admin_trash_path(article), class: "btn-icon" do %>
+      <i class="fa fa-undo"></i>
+      <%= t("trash.admin.actions.restore") %>
+    <% end %>
+    <% if current_user.admin? || current_user?(article.user) %>
+      <%= link_to admin_trash_path(article), method: :delete,
+        data:{confirm: t("custom.confirm_delete")} do %>
+        <i class="fa fa-minus-circle"></i>
+        <%= t("trash.admin.actions.delete_permanently") %>
+      <% end %>
+    <% end %>
+  </td>
+</tr>

@@ -1,0 +1,16 @@
+<div class="media">
+  <div class="media-left">
+    <%=  link_to image_tag(article.image_url, width: "95px", class: "media-object"),
+      article %>
+  </div>
+  <div class="media-body">
+    <h5 class="media-heading">
+      <%= link_to article do %>
+        <% if article.audio_url? %>
+          <i class="fa fa-volume-up"></i>
+        <% end %>
+        <%= truncate article.title, length: 60 %>
+      <% end %>
+    </h5>
+  </div>
+</div>

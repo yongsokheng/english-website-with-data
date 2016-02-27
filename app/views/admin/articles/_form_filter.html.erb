@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <div id="filter">
+      <%= search_form_for @search, url: url, method: :get do |f| %>
+        <div class="row">
+          <div class="col-md-4 title">
+            <%= f.text_field :title_cont, class: "form-control",
+              placeholder: t("article.admin.list.header.title") %>
+          </div>
+          <div class="col-md-2 author">
+            <%= f.collection_select :user_id_eq, User.all, :id, :name,
+              {include_blank: t("article.admin.all_authors")}, class: "form-control" %>
+          </div>
+          <div class="col-md-2 category">
+            <%= f.collection_select :category_id_eq, Category.all, :id, :name,
+              {include_blank: t("article.admin.all_categories")}, class: "form-control" %>
+          </div>
+          <div class="col-md-2 status">
+            <%= f.collection_select :post_status_cont, Settings.post_status, :first, :last,
+              {include_blank: t("article.admin.all_status")}, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 post-date">
+            <div class="form-group">
+              <div class='input-group date' id='datetimepicker1'>
+                <%=  f.text_field :created_at_gteq,
+                  value: (params[:q][:created_at_gteq] if params[:q].present?),
+                  class: "datetimepicker1 form-control",
+                  placeholder: t("article.admin.min_post_date") %>
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 post-date">
+            <div class="form-group">
+              <div class='input-group date' id='datetimepicker2'>
+                <%=  f.text_field :created_at_lteq,
+                  value: (params[:q][:created_at_lteq] if params[:q].present?),
+                  class: "datetimepicker2 form-control",
+                  placeholder: t("article.admin.max_post_date") %>
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-1 action">
+            <%= f.submit t("article.admin.buttons.filter"), class: "btn btn-warning pull-right" %>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+
+  </div>
+</div>

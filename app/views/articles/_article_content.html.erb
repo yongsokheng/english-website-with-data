@@ -1,0 +1,80 @@
+<div class="article">
+  <h3>
+    <% if @article.audio_url? %>
+      <i class="fa fa-volume-up"></i>
+    <% end %>
+    <%= @article.title %>
+  </h3>
+
+  <div class="fb-action">
+    <span class="fb-like" data-href="<%=  request.original_url %>" data-width="100%" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></span>
+    <span>
+      <a href="https://twitter.com/share" class="twitter-share-button"{count} data-via="monoread"></a>
+    </span>
+    <span>
+      <script src="https://apis.google.com/js/plusone.js"></script>
+      <g:plus action="share" annotation="bubble"></g:plus>
+    </span>
+  </div>
+
+  <div class="image"><%= image_tag @article.image_url, class: "img-responsive" %></div>
+
+  <div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- ads_homepage -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-1391132134348179"
+         data-ad-slot="2008653046"
+         data-ad-format="auto"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+  <% if @article.audio_url? %>
+    <div class="audio">
+      <p><b><%= t "labels.listen_audio" %></b></p>
+      <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<%= @article.audio_url %>&amp;color=0066cc&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false"></iframe>
+    </div>
+  <% end %>
+
+  <div class="detail">
+    <%= @article.content.html_safe %>
+  </div>
+
+  <div class="row" style="margin-left: 2px">
+    <h4>Sponsers: </h4>
+    <div class="col-md-5">
+      <script type="text/javascript">
+        google_ad_client = "ca-pub-1391132134348179";
+        google_ad_slot = "7724208646";
+        google_ad_width = 300;
+        google_ad_height = 250;
+      </script>
+      <!-- right_part_banner -->
+      <script type="text/javascript"
+      src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+    </div>
+    <div class="col-md-5">
+      <script type="text/javascript">
+        google_ad_client = "ca-pub-1391132134348179";
+        google_ad_slot = "4212339044";
+        google_ad_width = 300;
+        google_ad_height = 250;
+      </script>
+      <!-- right_part -->
+      <script type="text/javascript"
+      src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+    </div>
+  </div>
+
+</div>
+
+<hr>
+<div class="fb-comment">
+  <h4><%= t "labels.comment" %></h4>
+  <div class="fb-comments" data-href="<%=  request.original_url %>" data-numposts="5" data-width="100%"></div>
+</div>

@@ -1,0 +1,30 @@
+<%= form_for [:admin, @article], html: {multipart: true} do |f| %>
+  <div class="row" id="articles">
+    <div class="col-md-8">
+      <%= render "shared/errors_messages", object: @article %>
+      <p><%= f.label :title %></p>
+      <p><%= f.text_field :title, class: "form-control" %></p>
+      <p><%= f.label :category %></p>
+      <p><%= f.collection_select :category_id, Category.all, :id, :name, {},
+        class: "form-control" %></p>
+      <p><%= f.label :content %></p>
+      <p><%= f.cktext_area :content, ckeditor: {toolbar: :full} %></p>
+      <p><%= f.label :audio_url %></p>
+      <p><%= f.text_field :audio_url, class: "form-control" %></p>
+      <p><%= f.label :image %></p>
+      <p>
+        <%= image_tag @article.image_url, width: "50%" if @article.image? %>
+        <%= f.file_field :image, class: "form-control" %>
+        <%= f.hidden_field :image_cache %>
+      </p>
+    </div>
+
+    <div class="col-md-4">
+      <% unless @article.new_record? %>
+        <%= render "article_status_panel" %>
+      <% end %>
+      <%= render "publish_panel", f: f %>
+    </div>
+
+  </div>
+<% end %>

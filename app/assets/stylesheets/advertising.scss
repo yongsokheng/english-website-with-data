@@ -1,0 +1,25 @@
+$main-color: #007EE5;
+
+.advertising {
+  font-size: 1.2em;
+  h2 {
+    color: $main-color;
+    font-weight: bold;
+  }
+  h3 {
+    font-weight: bold;
+    font-style: italic;
+    color: $main-color;
+  }
+  ol {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: $main-color;
+    .ads-price {
+      color: RED;
+      font-style: italic;
+      margin-left: 20px;
+    }
+  }
+
+}

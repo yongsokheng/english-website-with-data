@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= t "article.admin.panel_status" %></h3>
+  </div>
+  <div class="panel-body">
+    <table>
+      <tr>
+        <td><b><%= t "article.admin.status" %></b> &nbsp;&nbsp;</td>
+        <td><%= @article_state.post_status %></td>
+      </tr>
+      <tr>
+        <% if Settings.post_status.pending == @article_state.post_status %>
+          <td><b><%= t "article.admin.schedule_at" %></b> &nbsp;&nbsp;</td>
+          <td><%= l @article_state.schedule_at, format: :default %></td>
+        <% elsif Settings.post_status.published == @article_state.post_status  %>
+          <td><b><%= t "article.admin.published_at" %></b> &nbsp;&nbsp;</td>
+          <td><%= l @article_state.published_at, format: :default %></td>
+        <% end %>
+      </tr>
+    </table>
+  </div>
+</div>

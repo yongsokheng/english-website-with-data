@@ -1,0 +1,25 @@
+<%= provide :title, t("category.admin.titles.all") %>
+<div id="categories">
+  <h2 class="title">
+    <%= t "category.admin.titles.all" %>
+    <% if current_user.admin? %>
+      <%= link_to new_admin_category_path, remote: true, class: "btn btn-primary pull-right"  do %>
+        <i class="fa fa-plus-square"></i> &nbsp;
+        <%= t("category.admin.buttons.add") %>
+      <% end %>
+    <% end %>
+  </h2>
+  <hr>
+  <div class="flash"></div>
+  <table class="table">
+    <thead>
+      <th><%= t "category.admin.list.header.name" %></th>
+      <th></th>
+    </thead>
+    <tbody class="category-list">
+      <%= render @categories %>
+    </tbody>
+  </table>
+  <%= will_paginate @categories %>
+</div>
+<div class="modal fade" id="category-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>

@@ -1,0 +1,16 @@
+en:
+  trash:
+    admin:
+      title:
+        header: "Trash"
+      actions:
+        restore: "Restore"
+        delete_permanently: "Delete Permanently"
+      list:
+        header:
+          title: "Title"
+          author: "author"
+          category: "Category"
+          posted_date: "Posted Date"
+          status: "Status"
+          actions: "Actions"

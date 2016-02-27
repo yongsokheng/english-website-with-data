@@ -1,0 +1,31 @@
+<%= provide :title, t("article.admin.title.header") %>
+<div id="articles">
+  <h2 class="title">
+    <%= t "article.admin.title.header" %>
+    <%= link_to new_admin_article_path, class: "btn btn-primary pull-right",
+      data: {no_turbolink: true} do %>
+      <i class="fa fa-plus-square"></i> &nbsp;
+      <%= t("article.admin.buttons.add") %>
+    <% end %>
+  </h2>
+  <hr>
+  <div class="form-filter">
+    <%= render "form_filter", url: admin_articles_path %>
+  </div>
+  <hr>
+  <table class="table table-bordered">
+    <thead>
+      <th width="25%"><%= t "article.admin.list.header.title" %></th>
+      <th width="5%"><%= t "article.admin.list.header.views" %></th>
+      <th width="10%"><%= t "article.admin.list.header.author" %></th>
+      <th width="10%"><%= t "article.admin.list.header.category" %></th>
+      <th width="15%"><%= t "article.admin.list.header.posted_date" %></th>
+      <th width="10%"><%= t "article.admin.list.header.status" %></th>
+      <th width="25%"></th>
+    </thead>
+    <tbody>
+      <%= render @articles %>
+    </tbody>
+  </table>
+  <%= will_paginate @articles %>
+</div>

@@ -1,0 +1,25 @@
+<%= provide :title, @category_name %>
+<div class="row">
+  <div class="col-md-8">
+    <h4><%= @category_name %></h4>
+    <div class="line"></div>
+    <%= render partial: "big_article", collection: @big_article, as: :article %>
+
+    <hr>
+    <div>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- ads_homepage -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-1391132134348179"
+           data-ad-slot="2008653046"
+           data-ad-format="auto"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
+    <%= render partial: "small_article", collection: @small_articles, as: :article %>
+  </div>
+  <%= render "right_part" %>
+</div>

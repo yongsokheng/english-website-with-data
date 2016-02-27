@@ -1,0 +1,18 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title">
+        <% if @user.new_record? %>
+          <%= t "user.admin.modal.user_add" %>
+        <% else %>
+          <%= t "user.admin.modal.user_edit" %>
+        <% end %>
+      </h4>
+    </div>
+    <div class="modal-body">
+      <div class="error_messages"></div>
+      <%= render "form", action: action %>
+    </div>
+  </div>
+</div>

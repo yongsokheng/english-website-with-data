@@ -1,0 +1,7 @@
+<% if @category.errors.any?  %>
+  $(".error_messages").html("<%= j render 'shared/errors_messages', object: @category %>");
+<% else %>
+  $("#category-modal").modal("hide");
+  $(".category-list").html("<%= j render @categories %>")
+  $(".flash").html("<%= j render 'shared/flash'  %>");
+<% end %>

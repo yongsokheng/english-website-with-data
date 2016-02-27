@@ -1,0 +1,29 @@
+ <div class="col-md-2">
+    <%= image_tag @user.avatar_url, class: "img-circle" %>
+  </div>
+  <div class="col-md-5">
+    <table>
+      <tr>
+        <td><b><%= t "user.admin.list.header.name" %>: </b></td>
+        <td><%= @user.name %></td>
+      </tr>
+      <tr>
+        <td><b><%= t "user.admin.list.header.email" %>: </b></td>
+        <td><%= @user.email %></td>
+      </tr>
+    </table>
+    <br>
+    <% if current_user? @user %>
+      <p>
+        <%= link_to edit_admin_profile_path(@user), remote: true do %>
+          <i class="fa fa-user"></i>
+          <%= t("user.admin.actions.edit_profile") %>
+        <% end %>
+        <br>
+        <%= link_to edit_admin_password_path(@user), remote: true do %>
+          <i class="fa fa-cog"></i>
+          <%= t("user.admin.actions.change_password") %>
+        <% end %>
+      </p>
+    <% end %>
+  </div>

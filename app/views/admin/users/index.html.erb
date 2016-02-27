@@ -1,0 +1,27 @@
+<%= provide :title, t("user.admin.titles.all") %>
+<div id="categories">
+  <h2 class="title">
+    <%= t "user.admin.titles.all" %>
+    <% if current_user.admin? %>
+      <%= link_to new_admin_user_path, remote: true, class: "btn btn-primary pull-right"  do %>
+        <i class="fa fa-plus-square"></i> &nbsp;
+        <%= t("user.admin.buttons.add") %>
+      <% end %>
+    <% end %>
+  </h2>
+  <hr>
+  <div class="flash"></div>
+  <table class="table">
+    <thead>
+      <th><%= t "user.admin.list.header.name" %></th>
+      <th><%= t "user.admin.list.header.email" %></th>
+      <th><%= t "user.admin.list.header.role" %></th>
+      <th></th>
+    </thead>
+    <tbody class="user-list">
+      <%= render @users %>
+    </tbody>
+  </table>
+  <%= will_paginate @users %>
+</div>
+<div class="modal fade" id="user-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>

@@ -1,0 +1,35 @@
+<%= provide :title, t("dashboard.admin.header") %>
+<h2><%= t "dashboard.admin.header" %></h2>
+<hr>
+<ul class="list-group">
+  <li class="list-group-item">
+    <span class="badge"><%= @user_number %></span>
+    <%= t "dashboard.admin.user" %>
+  </li>
+  <li class="list-group-item">
+    <span class="badge"><%= @category_number %></span>
+    <%= t "dashboard.admin.category" %>
+  </li>
+  <li class="list-group-item">
+    <span class="badge"><%= @article_number %></span>
+    <%= t "dashboard.admin.article" %>
+    <ol>
+        <li>
+          <%= t "dashboard.admin.draft" %>
+          <span class="badge"><%= @draft_number %></span>
+        </li>
+        <li>
+          <%= t "dashboard.admin.pending" %>
+          <span class="badge"><%= @pending_number %></span>
+          </li>
+        <li>
+          <%= t "dashboard.admin.published" %>
+          <span class="badge"><%= @published_number %></span>
+        </li>
+      </ol>
+  </li>
+  <li class="list-group-item">
+    <span class="badge"><%= @trash_number %></span>
+    <%= t "dashboard.admin.trash" %>
+  </li>
+</ul>

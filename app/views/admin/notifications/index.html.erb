@@ -1,0 +1,27 @@
+<%= provide :title, t("notification.title") %>
+<div id="notification">
+  <h2 class="title">
+    <%= t "notification.title" %>
+    <%= link_to new_admin_notification_path, remote: true, class: "btn btn-primary pull-right"  do %>
+        <i class="fa fa-plus-square"></i> &nbsp;
+      <%= t("notification.actions.add") %>
+    <% end %>
+  </h2>
+  <hr>
+  <div class="flash"></div>
+  <table class="table">
+    <thead>
+      <th width="40%"><%= t "notification.list.header.content" %></th>
+      <th width="10%"><%= t "notification.list.header.url" %></th>
+      <th width="10%"><%= t "notification.list.header.by" %></th>
+      <th width="15%"><%= t "notification.list.header.created_at" %></th>
+      <th width="15%"><%= t "notification.list.header.result" %></th>
+      <th width="10%"></th>
+    </thead>
+    <tbody class="notification-list">
+      <%= render @notifications %>
+    </tbody>
+  </table>
+  <%= will_paginate @notifications %>
+</div>
+<div class="modal fade" id="notification-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
