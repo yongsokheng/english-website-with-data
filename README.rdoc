@@ -1,28 +1,22 @@
-== README
+This is the whole project of monoread.com (web data + sql data).
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Backing up data:
+mysqldump -u username -p database_to_backup > backup_name.sql
 
-Things you may want to cover:
+Restoring data:
 
-* Ruby version
+To restore a database dump created with mysqldump, you simply have to redirect the file into MySQL again.
 
-* System dependencies
+We need to create a blank database to house the imported data. First, log into MySQL by typing:
 
-* Configuration
+mysql -u username -p
+Create a new database which will hold all of the data from the data dump and then exit out of the MySQL prompt:
 
-* Database creation
+CREATE DATABASE database_name;
+exit
+Next, we can redirect the dump file into our newly created database by issuing the following command:
 
-* Database initialization
+mysql -u username -p database_name < backup_name.sql
+Your information should now be restored to the database you've created.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Source: https://www.digitalocean.com/community/tutorials/how-to-backup-mysql-databases-on-an-ubuntu-vps
